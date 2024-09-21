@@ -1,0 +1,17 @@
+---
+import { getI18N } from "@/i18n";
+
+const { currentLocale = "es" } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<footer
+  class="text-white p-3 pb-9 w-full mx-auto container lg:max-w-4xl md:max-w-2xl [border-top:1px_solid_white] flex justify-end gap-4"
+>
+  <a class="hover:text-blue-500" href="#welcome">{i18n.FOOTER.ABOUT_ME}</a>
+  <a
+    class="hover:text-blue-500"
+    href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=danielmedina7778@gmail.com"
+    >{i18n.FOOTER.CONTACT_ME}</a
+  >
+</footer>

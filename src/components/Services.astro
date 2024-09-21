@@ -1,0 +1,185 @@
+---
+import MySection from "./MySection.astro";
+import TitleSection from "./TitleSection.astro";
+import { getI18N } from "@/i18n";
+import type { JSX } from "astro/jsx-runtime";
+
+import JavascriptIcon from "@icons/JavascriptIcon.astro";
+import TypescriptIcon from "@icons/TypescriptIcon.astro";
+import ReactIcon from "@icons/ReactIcon.astro";
+import HtmlIcon from "@icons/HtmlIcon.astro";
+import AstroIcon from "@icons/AstroIcon.astro";
+import NextjsIcon from "@icons/NextjsIcon.astro";
+import CssIcon from "@icons/CssIcon.astro";
+import TailwindIcon from "@icons/TailwindIcon.astro";
+import Figma from "@icons/Figma.astro";
+import GitIcon from "@icons/GitIcon.astro";
+import GithubIcon from "@icons/GithubIcon.astro";
+import NetlifyIcon from "@icons/NetlifyIcon.astro";
+import VercelIcon from "@icons/VercelIcon.astro";
+import AWSIcon from "@icons/AWSIcon.astro";
+import NodejsIcon from "@icons/NodejsIcon.astro";
+
+const { currentLocale = "es" } = Astro;
+const i18n = getI18N({ currentLocale });
+
+interface Services {
+  title: string;
+  subtitle?: string;
+  description: string;
+  list: string[];
+  techUsed?: JSX.Element[];
+}
+
+const services: Services[] = [
+  {
+    title: i18n.SERVICES.SERVICES_1.TITLE,
+    description: i18n.SERVICES.SERVICES_1.DESCRIPTION,
+    list: i18n.SERVICES.SERVICES_1.LIST,
+    techUsed: [
+      JavascriptIcon,
+      TypescriptIcon,
+      ReactIcon,
+      AstroIcon,
+      NextjsIcon,
+      NodejsIcon,
+    ],
+  },
+  {
+    title: i18n.SERVICES.SERVICES_2.TITLE,
+    description: i18n.SERVICES.SERVICES_2.DESCRIPTION,
+    list: i18n.SERVICES.SERVICES_2.LIST,
+    techUsed: [CssIcon, TailwindIcon, HtmlIcon, Figma, AstroIcon],
+  },
+  {
+    title: i18n.SERVICES.SERVICES_3.TITLE,
+    description: i18n.SERVICES.SERVICES_3.DESCRIPTION,
+    list: i18n.SERVICES.SERVICES_3.LIST,
+    techUsed: [GitIcon, GithubIcon, NetlifyIcon, VercelIcon, AWSIcon],
+  },
+  {
+    title: i18n.SERVICES.SERVICES_4.TITLE,
+    subtitle: i18n.SERVICES.SERVICES_4.SUBTITLE,
+    description: i18n.SERVICES.SERVICES_4.DESCRIPTION,
+    list: i18n.SERVICES.SERVICES_4.LIST,
+  },
+  {
+    title: i18n.SERVICES.SERVICES_5.TITLE,
+    subtitle: i18n.SERVICES.SERVICES_5.SUBTITLE,
+    description: i18n.SERVICES.SERVICES_5.DESCRIPTION,
+    list: i18n.SERVICES.SERVICES_5.LIST,
+  },
+];
+---
+
+<MySection id="services" data-section="services">
+  <TitleSection>
+    <svg
+      class="size-8"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+        d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"
+      ></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path
+        d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg
+    >
+    {i18n.SERVICES.TITLE}
+  </TitleSection>
+  <div class="wrapper h-[450vh]">
+    <div class="grid content-center sticky top-0 p-[2em] h-screen">
+      <div
+        class="gallery grid grid-flow-col gap-[2rem] [translate:calc(var(--n)*(50vw-100%))]"
+      >
+        {
+          services.map((service) => (
+            <article class="box w-[80vw] max-w-[480px] h-[84vh] max-h-[650px] p-4 border border-gray-700 bg-white relative overflow-hidden flex flex-col gap-2 rounded-2xl pb-4">
+              <h3 class="text-black text-4xl md:text-4xl font-bold capitalize mt-6">
+                {service.title}
+                <span class="block text-xl text-gray-700">
+                  {service.subtitle && service.subtitle}
+                </span>
+              </h3>
+              <p class="text-gray-600 text-xl sm:text-2xl  pb-6 pt-4">
+                {service.description}
+              </p>
+              <ul class="list-disc pl-12 flex flex-col gap-6">
+                {service.list.map((item) => (
+                  <li class="text-gray-600 text-lg sm:text-xl marker:[content:'✅'] first-letter:capitalize">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              {service.techUsed?.map((Tech) => (
+                <Tech />
+              ))}
+
+              <hr class="absolute bottom-6 [transform:translateX(8%)] w-[80%] border-black mx-auto" />
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</MySection>
+
+<script>
+  const icons: NodeListOf<HTMLElement> = document.querySelectorAll(".box svg");
+  const box: HTMLElement | null = document.querySelector(".box");
+
+  if (box) {
+    icons.forEach((icon: HTMLElement) => {
+      const acceleration = ["ease", "ease-out", "ease-in", "ease-in-out"];
+      const randomNumber: number = Math.floor(Math.random() * 4);
+
+      icon.style.position = "absolute";
+      icon.style.opacity = "0";
+
+      setInterval(() => {
+        const randomX: number = Math.random() * (box.clientWidth - 40); // Ajusta según el tamaño del ícono
+        const randomY: number = 30 + Math.random() * 30;
+
+        icon.style.bottom = `${randomY}%`;
+        icon.style.left = `${randomX}px`;
+        icon.style.opacity = "1";
+        icon.style.animation = `move 3s infinite ${acceleration[randomNumber]}`;
+      }, 3000); // Usa el intervalo aleatorio generado
+    });
+  }
+</script>
+
+<style>
+  @property --n {
+    syntax: "<number>";
+    initial-value: 0;
+    inherits: true;
+  }
+
+  @supports (animation-timeline: view()) {
+    .wrapper {
+      animation: n 1s both;
+      animation-timeline: view();
+      animation-range: contain;
+    }
+  }
+
+  @keyframes n {
+    to {
+      --n: 1;
+    }
+  }
+
+  @keyframes move {
+    from {
+      transform: translateY(250px);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+</style>

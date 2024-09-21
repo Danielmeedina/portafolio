@@ -1,0 +1,12 @@
+---
+const { class: className, ...props } = Astro.props;
+---
+
+<a
+  class=`h-10 border flex justify-center items-center gap-1 py-1 px-1 rounded  ${className}`
+  target="_blank"
+  rel="noopener noreferrer"
+  {...props}
+>
+  <slot />
+</a>

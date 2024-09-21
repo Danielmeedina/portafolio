@@ -1,0 +1,87 @@
+{
+  "NAVBAR": {
+    "TITLE_1": "services",
+    "TITLE_LABEL_1": "go to services section",
+    "TITLE_2": "projects",
+    "TITLE_LABEL_2": "go to projects section",
+    "TITLE_3": "contact",
+    "TITLE_LABEL_3": "go to contact section"
+  },
+  "WELCOME": {
+    "WORK": "Available to work",
+    "YOP": "Hey, i'm Daniel",
+    "RESUME": {
+      "1": "+1 year of experience.",
+      "2": "Frontend web developer from Colombia",
+      "3": "Specializing in developing unique web applications. I am here to turn your vision into an amazing digital reality.",
+      "4": "Let me take your project to the next level."
+    },
+    "CONTACT_ME": "Contact me"
+  },
+  "SERVICES": {
+    "TITLE": "services",
+    "SERVICES_1": {
+      "TITLE": "web programming",
+      "DESCRIPTION": "Development of websites and web applications using technologies such as HTML, CSS, JavaScript and modern frameworks.",
+      "LIST": [
+        "Custom Website Development",
+        "Implementation of specific functionalities according to the required needs",
+        "performance optimization",
+        "interactive web applications"
+      ]
+    },
+    "SERVICES_2": {
+      "TITLE": "Web design",
+      "DESCRIPTION": "Creation of attractive, functional and user-friendly web interfaces, focused on improving the UX/UI user experience.",
+      "LIST": [
+        "responsive design (adaptable to mobile devices)",
+        "Customizing themes for CMS like WordPress",
+        "web mockup creation",
+        "redesign user interface"
+      ]
+    },
+    "SERVICES_3": {
+      "TITLE": " Web hosting",
+      "DESCRIPTION": "Server management and maintenance to ensure websites are always online, secure and fast.",
+      "LIST": [
+        "Server Configuration",
+        "domain registration",
+        "Installing SSL Certificates",
+        "continuous technical support",
+        "Migration of entire sites"
+      ]
+    },
+    "SERVICES_4": {
+      "TITLE": " WPO",
+      "SUBTITLE": "Web performance optimization",
+      "DESCRIPTION": "Improving web performance to ensure fast loading times and smooth user experiences.",
+      "LIST": [
+        "Image optimization",
+        "reducing server response time",
+        "Performance analysis and continuous adjustments",
+        "Optimization for Core Web Vitals: Largest Contentful Paint, First Input Delay and Cumulative Layout Shift."
+      ]
+    },
+    "SERVICES_5": {
+      "TITLE": "SEO",
+      "SUBTITLE": "Search Engine Optimization",
+      "DESCRIPTION": "Website optimization to improve your visibility in search engines and attract organic traffic to increase your website's traffic.",
+      "LIST": [
+        "web content and structure optimization",
+        "keyword research",
+        "Loading speed improvement",
+        "optimization of meta tags (title, descriptions)"
+      ]
+    }
+  },
+  "PROJECTS": {
+    "TITLE": "projects",
+    "PROJECT_1": {
+      "DESCRIPTION": "Here you will find a wide variety of tricks. You will learn new things. You will discover things you didn't know, all this done with ❤ by web development"
+    }
+  },
+  "FOOTER": {
+    "ABOUT_ME": "About me",
+    "CONTACT_ME": "Contact me"
+  }
+}

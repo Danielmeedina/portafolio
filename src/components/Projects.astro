@@ -1,0 +1,192 @@
+---
+import MySection from "./MySection.astro";
+import TitleSection from "./TitleSection.astro";
+import AstroIcon from "@icons/AstroIcon.astro";
+import CssIcon from "@icons/CssIcon.astro";
+import TypescriptIcon from "@icons/TypescriptIcon.astro";
+import GithubIcon from "@icons/GithubIcon.astro";
+import GowebIcon from "@icons/GowebIcon.astro";
+import type { JSX } from "astro/jsx-runtime";
+
+import { getI18N } from "@/i18n";
+
+const { currentLocale = "es" } = Astro;
+const i18n = getI18N({ currentLocale });
+
+interface Props {
+  width?: string;
+  height?: string;
+}
+
+interface Projects {
+  title: string;
+  description: string;
+  techUsed: ((props: Props) => JSX.Element)[];
+  img: string;
+  URLwebsite: string;
+  URLrepository: string;
+}
+
+const projects: Projects[] = [
+  {
+    title: "Tricks web",
+    description: i18n.PROJECTS.PROJECT_1.DESCRIPTION,
+    techUsed: [AstroIcon, CssIcon, TypescriptIcon],
+    img: "tricksweb.png",
+    URLwebsite: "https://tricksweb.netlify.app/",
+    URLrepository: "https://github.com/Danielmeedina/Tricks-Web",
+  },
+  {
+    title: "Tricks web",
+    description: i18n.PROJECTS.PROJECT_1.DESCRIPTION,
+    techUsed: [AstroIcon, CssIcon, TypescriptIcon],
+    img: "tricksweb.png",
+    URLwebsite: "https://tricksweb.netlify.app/",
+    URLrepository: "https://github.com/Danielmeedina/Tricks-Web",
+  },
+  {
+    title: "Tricks web",
+    description: i18n.PROJECTS.PROJECT_1.DESCRIPTION,
+    techUsed: [AstroIcon, CssIcon, TypescriptIcon],
+    img: "tricksweb.png",
+    URLwebsite: "https://tricksweb.netlify.app/",
+    URLrepository: "https://github.com/Danielmeedina/Tricks-Web",
+  },
+  {
+    title: "Tricks web",
+    description: i18n.PROJECTS.PROJECT_1.DESCRIPTION,
+    techUsed: [AstroIcon, CssIcon, TypescriptIcon],
+    img: "tricksweb.png",
+    URLwebsite: "https://tricksweb.netlify.app/",
+    URLrepository: "https://github.com/Danielmeedina/Tricks-Web",
+  },
+];
+---
+
+<MySection id="projects" data-section="projects" class="mb-16 sm:mb-32">
+  <TitleSection>
+    <svg
+      class="size-7"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+        d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
+        d="M14 4l-4 16"></path></svg
+    >
+    {i18n.PROJECTS.TITLE}
+  </TitleSection>
+  <div class="stack-cards flex flex-col gap-[1.5rem]">
+    {
+      projects.map((project) => (
+        <div class="card sticky top-[48px] h-auto sm:h-[425px]">
+          <article class="card-content relative overflow-x-hidden h-auto sm:h-[425px] group">
+            <img
+              src={`/src/img/${project.img}`}
+              alt="sitio web tricksweb"
+              class="sm:absolute sm:inset-0 min-h-[150px] w-full sm:h-full object-cover object-top sm:group-hover:blur-sm"
+            />{" "}
+            <div class="bg-stone-900 sm:w-[70%] h-full px-2 py-4 sm:p-4 flex flex-col gap-4 sm:gap-8 lg:gap-10 sm:opacity-0 sm:group-hover:opacity-100 transition-all [transition-duration:.5s] sm:group-hover:translate-x-0 sm:[mask-image:linear-gradient(to_left,transparent,#000,#000)] sm:pr-16 sm:-translate-x-[100%]">
+              <h3 class="text-4xl sm:text-5xl font-bold text-white">
+                {project.title}
+              </h3>
+              <p class="text-gray-300 text-xl md:w-[70%]">
+                {project.description}
+              </p>
+              <aside class="flex flex-row items-center gap-4">
+                {project.techUsed.map((Tech) => (
+                  <Tech width="35" height="35" />
+                ))}
+              </aside>
+              <footer class="flex flex-row gap-4">
+                <a
+                  href={project.URLwebsite}
+                  target="_blank"
+                  class="flex flex-row gap-2 items-center border rounded p-2 hover:bg-blue-500 text-white"
+                >
+                  <GowebIcon /> Preview
+                </a>
+                <a
+                  href={project.URLrepository}
+                  target="_blank"
+                  class="text-white flex flex-row gap-2 items-center p-2 border rounded border-transparent hover:text-blue-500 hover:border-blue-500"
+                >
+                  <GithubIcon width="25" height="25" color="white" />
+                  Code
+                </a>
+              </footer>
+            </div>
+          </article>
+        </div>
+      ))
+    }
+  </div>
+</MySection>
+
+<style>
+  .stack-cards {
+    view-timeline-name: --stack-cards;
+  }
+
+  .stack-cards .card .card-content {
+    transform-origin: center top;
+    -webkit-animation: linear scale forwards;
+    animation: linear scale forwards;
+    animation-timeline: --stack-cards;
+  }
+
+  @keyframes scale {
+    to {
+      /* background-color: var(--final-bg, #fff); */
+      transform: scale(var(--max-scale, 1));
+    }
+  }
+
+  .stack-cards .card:nth-child(1) {
+    --max-scale: 0.7;
+    --final-bg: #555;
+    padding-top: 25px;
+  }
+  .stack-cards .card:nth-child(1) .card-content {
+    animation-range: exit-crossing 0% exit-crossing 25%;
+  }
+
+  .stack-cards .card:nth-child(2) {
+    --max-scale: 0.8;
+    --initial-range: 25%;
+    --final-range: 50%;
+    --final-bg: #888;
+    padding-top: 50px;
+  }
+  .stack-cards .card:nth-child(2) .card-content {
+    animation-range: exit-crossing 25% exit-crossing 50%;
+  }
+
+  .stack-cards .card:nth-child(3) {
+    --max-scale: 0.9;
+    --initial-range: 50%;
+    --final-range: 75%;
+    --final-bg: #bbb;
+    padding-top: 75px;
+  }
+  .stack-cards .card:nth-child(3) .card-content {
+    animation-range: exit-crossing 50% exit-crossing 75%;
+  }
+
+  .stack-cards .card:nth-child(4) {
+    --max-scale: 1;
+    --initial-range: 75%;
+    --final-range: 100%;
+    --final-bg: #eee;
+    padding-top: 100px;
+  }
+  .stack-cards .card:nth-child(4) .card-content {
+    animation-range: exit-crossing 75% exit-crossing 100%;
+  }
+</style>

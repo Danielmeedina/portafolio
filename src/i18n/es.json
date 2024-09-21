@@ -1,0 +1,87 @@
+{
+  "NAVBAR": {
+    "TITLE_1": "servicios",
+    "TITLE_LABEL_1": "ir a servicios",
+    "TITLE_2": "proyectos",
+    "TITLE_LABEL_2": "ir a proyectos",
+    "TITLE_3": "contacto",
+    "TITLE_LABEL_3": "ir a contacto"
+  },
+  "WELCOME": {
+    "WORK": "Disponible para trabajar",
+    "YOP": "Hey, soy Daniel",
+    "RESUME": {
+      "1": "+1 año de experiencia.",
+      "2": "Desarrollador web Frontend de colombia",
+      "3": "Especializado en el desarrollo de aplicaciones web únicas. Estoy aquí para convertir tu visión en una realidad digital sorprendente.",
+      "4": "Déjame llevar tu proyecto al siguiente nivel."
+    },
+    "CONTACT_ME": "Contactame"
+  },
+  "SERVICES": {
+    "TITLE": "servicios",
+    "SERVICES_1": {
+      "TITLE": "programacion web",
+      "DESCRIPTION": "Desarrollo de sitios y aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript y frameworks modernos.",
+      "LIST": [
+        "Desarrollo de sitios web personalizados",
+        "implementación de funcionalidades específicas según las necesidades requeridas",
+        "optimización de rendimiento",
+        "aplicaciones web interactivas"
+      ]
+    },
+    "SERVICES_2": {
+      "TITLE": "Diseño web",
+      "DESCRIPTION": "Creación de interfaces web atractivas, funcionales y amigables para el usuario, enfocadas en mejorar la experiencia del usuario UX/UI.",
+      "LIST": [
+        "diseño responsive (adaptable a dispositivos móviles)",
+        "personalización de temas para CMS como WordPress",
+        "creación de maquetas web",
+        "Rediseñar interfaces de usuario"
+      ]
+    },
+    "SERVICES_3": {
+      "TITLE": "Alojamiento web",
+      "DESCRIPTION": "Gestión y mantenimiento de servidores para asegurar que los sitios web estén siempre en línea, sean seguros y rápidos.",
+      "LIST": [
+        "Configuración de servidores",
+        "registro de dominios",
+        "instalación de certificados SSL",
+        "soporte técnico continuo",
+        "Migración de sitios completos"
+      ]
+    },
+    "SERVICES_4": {
+      "TITLE": " WPO",
+      "SUBTITLE": "Optimizacion del rendimiento web",
+      "DESCRIPTION": "Mejora del rendimiento web para garantizar tiempos de carga rápidos y experiencias de usuario fluidas.",
+      "LIST": [
+        "Optimización de imágenes",
+        "reducción del tiempo de respuesta del servidor",
+        "análisis de rendimiento y ajustes continuos",
+        "Optimización para Core Web Vitals: Largest Contentful Paint, First Input Delay y Cumulative Layout Shift."
+      ]
+    },
+    "SERVICES_5": {
+      "TITLE": "SEO",
+      "SUBTITLE": "Optimización en buscadores",
+      "DESCRIPTION": "Optimización de sitios web para mejorar su visibilidad en los motores de búsqueda y atraer tráfico orgánico para aumentar las visitas de tu web.",
+      "LIST": [
+        "optimización de contenido y estructura web",
+        "investigación de palabras clave",
+        "Mejora de velocidad de carga",
+        "optimización de meta etiquetas (título, descripciones)"
+      ]
+    }
+  },
+  "PROJECTS": {
+    "TITLE": "proyectos",
+    "PROJECT_1": {
+      "DESCRIPTION": "Aquí encontrarás una gran variedad de trucos. Aprenderás cosas nuevas. Descubrirás cosas que no sabías, todo esto hecho con ❤ por el desarrollo web"
+    }
+  },
+  "FOOTER": {
+    "ABOUT_ME": "Sobre mi",
+    "CONTACT_ME": "Contactame"
+  }
+}

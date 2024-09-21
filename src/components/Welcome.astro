@@ -1,0 +1,96 @@
+---
+import MySection from "./MySection.astro";
+import Colombia from "@icons/flags/Colombia.astro";
+import PDFIcon from "@icons/PDFIcon.astro";
+import Linkedin from "@icons/Linkedin.astro";
+import GithubIcon from "@icons/GithubIcon.astro";
+import Gmail from "@icons/Gmail.astro";
+import BtnContact from "@components/BtnContact.astro";
+import SliderTech from "@components/SliderTech.astro";
+
+import { getI18N } from "@/i18n";
+
+const { currentLocale = "es" } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<MySection
+  id="welcome"
+  data-section="welcome"
+  class="pt-32 md:pb-24 flex flex-col gap-12"
+>
+  <div class="max-w-xl">
+    <div class="flex gap-4 mb-4">
+      <a
+        href="https://www.linkedin.com/in/daniel-medina-828261242/"
+        target="_blank"
+        rel="noopener"
+        class="flex items-center transition md:justify-center md:hover:scale-105"
+      >
+        <div class="flex items-center">
+          <span
+            class="relative inline-flex overflow-hidden rounded-full p-[1px]"
+          >
+            <span
+              class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"
+            ></span>
+            <div
+              class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-800 rounded-full cursor-pointer bg-gray-800 text-white/80 backdrop-blur-3xl whitespace-nowrap"
+            >
+              {i18n.WELCOME.WORK}
+            </div>
+          </span>
+        </div>
+      </a>
+    </div>
+    <span class="text-4xl font-bold tracking-tight sm:text-5xl text-white">
+      {i18n.WELCOME.YOP}
+    </span>
+    <h1
+      class="mt-6 text-xl text-gray-300 [&>strong]:text-yellow-200 [&>strong]:font-semibold"
+    >
+      {i18n.WELCOME.RESUME[1]}
+      <strong>{i18n.WELCOME.RESUME[2]} <Colombia /> </strong>.{
+        i18n.WELCOME.RESUME[3]
+      }
+      <strong>{i18n.WELCOME.RESUME[4]}</strong>
+    </h1>
+    <nav class="flex flex-wrap gap-4 mt-8">
+      <BtnContact
+        href="https://www.linkedin.com/in/daniel-medina-828261242/"
+        title="go to my linkedin"
+        class="border-blue-500 text-blue-300 hover:bg-blue-700 hover:text-white"
+      >
+        <Linkedin width="20" height="20" />
+        Linkedin
+      </BtnContact>
+      <BtnContact
+        href="https://github.com/Danielmeedina"
+        title="go to my github"
+        class="border-gray-400 text-gray-300 hover:bg-gray-700 hover:text-white"
+      >
+        <GithubIcon width="25" height="25" color="#ffffff" />
+        Github
+      </BtnContact>
+      <BtnContact
+        href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=danielmedina7778@gmail.com"
+        title="hire me"
+        class="gmail border-transparent text-white bg-red-800 hover:bg-transparent hover:text-red-400 hover:border-red-400"
+      >
+        <Gmail width="20" height="20" />
+        {i18n.WELCOME.CONTACT_ME}
+      </BtnContact>
+    </nav>
+  </div>
+  <SliderTech />
+</MySection>
+
+<script>
+  const gmail = document.querySelector<HTMLAnchorElement>(".gmail");
+
+  if (gmail) {
+    if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
+      gmail.setAttribute("href", "mailto:danielmedina7778@gmail.com");
+    }
+  }
+</script>

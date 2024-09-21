@@ -1,0 +1,130 @@
+---
+import AstroIcon from "@icons/AstroIcon.astro";
+import CssIcon from "@icons/CssIcon.astro";
+import GithubIcon from "@icons/GithubIcon.astro";
+import GitIcon from "@icons/GitIcon.astro";
+import HtmlIcon from "@icons/HtmlIcon.astro";
+import JavascriptIcon from "@icons/JavascriptIcon.astro";
+import NextjsIcon from "@icons/NextjsIcon.astro";
+import NodejsIcon from "@icons/NodejsIcon.astro";
+import ReactIcon from "@icons/ReactIcon.astro";
+import TailwindIcon from "@icons/TailwindIcon.astro";
+import TypescriptIcon from "@icons/TypescriptIcon.astro";
+---
+
+<div
+  class="container rounded p-2 w-full mx-auto lg:max-w-4xl md:max-w-2xl slider"
+>
+  <div class="slide-track">
+    <figure class="slide">
+      <HtmlIcon width="60" height="60" />
+      <figcaption>HTML</figcaption>
+    </figure>
+    <figure class="slide">
+      <CssIcon width="60" height="60" />
+      <figcaption>CSS</figcaption>
+    </figure>
+    <figure class="slide">
+      <TailwindIcon width="60" height="60" />
+      <figcaption>Tailwind</figcaption>
+    </figure>
+    <figure class="slide">
+      <JavascriptIcon width="60" height="60" />
+      <figcaption>JavaScript</figcaption>
+    </figure>
+    <figure class="slide">
+      <TypescriptIcon width="60" height="60" />
+      <figcaption>TypeScript</figcaption>
+    </figure>
+    <figure class="slide">
+      <GithubIcon width="60" height="60" />
+      <figcaption>Github</figcaption>
+    </figure>
+    <figure class="slide">
+      <GitIcon width="60" height="60" />
+      <figcaption>Git</figcaption>
+    </figure>
+    <figure class="slide">
+      <AstroIcon width="60" height="60" />
+      <figcaption>Astro</figcaption>
+    </figure>
+    <figure class="slide">
+      <NextjsIcon width="60" height="60" />
+      <figcaption>Nextjs</figcaption>
+    </figure>
+    <figure class="slide">
+      <ReactIcon width="60" height="60" />
+      <figcaption>React</figcaption>
+    </figure>
+    <figure class="slide">
+      <NodejsIcon width="60" height="60" />
+      <figcaption>Nodejs</figcaption>
+    </figure>
+  </div>
+</div>
+
+<style>
+  .slider {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slider:hover .slide-track {
+    animation-play-state: paused;
+  }
+
+  .slide-track {
+    --amount: -105px;
+    animation: scroll 5s linear infinite alternate;
+    display: flex;
+    width: calc(180px * 11);
+    gap: 10px;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(60px);
+    }
+    100% {
+      transform: translateX(calc(var(--amount) * 11));
+    }
+  }
+
+  .slide {
+    padding: 10px;
+    width: 180px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: rgb(239, 239, 239);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    gap: 10px;
+  }
+  .slide figcaption {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  @media (width <= 1024px) {
+    .slide-track {
+      --amount: -115px;
+    }
+  }
+  @media (width <= 800px) {
+    .slide-track {
+      --amount: -125px;
+    }
+  }
+  @media (width <= 660px) {
+    .slide-track {
+      --amount: -140px;
+    }
+  }
+  @media (width <= 440px) {
+    .slide-track {
+      --amount: -155px;
+    }
+  }
+</style>

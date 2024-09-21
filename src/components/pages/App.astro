@@ -1,0 +1,28 @@
+---
+import Navbar from "@components/Navbar.astro";
+import Welcome from "@components/Welcome.astro";
+import Services from "@components/Services.astro";
+import Projects from "@components/Projects.astro";
+import Contact from "@components/Contact.astro";
+import Layout from "@/layouts/Layout.astro";
+
+import { getI18N } from "@/i18n";
+import Footer from "@components/Footer.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<Layout title="Daniel medina | Frontend developer">
+  <Navbar />
+  <div
+    class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_10%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+  >
+  </div>
+  <main class="px-4">
+    <Welcome />
+    <Services />
+    <Projects />
+  </main>
+  <Footer />
+</Layout>

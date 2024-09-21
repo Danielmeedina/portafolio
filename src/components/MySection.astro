@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"section"> {}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<section
+  {...props}
+  class={`section pb-14 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl ${className}`}
+>
+  <slot />
+</section>
