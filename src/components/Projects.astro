@@ -36,30 +36,6 @@ const projects: Projects[] = [
     URLwebsite: "https://tricksweb.netlify.app/",
     URLrepository: "https://github.com/Danielmeedina/Tricks-Web",
   },
-  {
-    title: "Tricks web",
-    description: i18n.PROJECTS.PROJECT_1.DESCRIPTION,
-    techUsed: [AstroIcon, CssIcon, TypescriptIcon],
-    img: "tricksweb.png",
-    URLwebsite: "https://tricksweb.netlify.app/",
-    URLrepository: "https://github.com/Danielmeedina/Tricks-Web",
-  },
-  {
-    title: "Tricks web",
-    description: i18n.PROJECTS.PROJECT_1.DESCRIPTION,
-    techUsed: [AstroIcon, CssIcon, TypescriptIcon],
-    img: "tricksweb.png",
-    URLwebsite: "https://tricksweb.netlify.app/",
-    URLrepository: "https://github.com/Danielmeedina/Tricks-Web",
-  },
-  {
-    title: "Tricks web",
-    description: i18n.PROJECTS.PROJECT_1.DESCRIPTION,
-    techUsed: [AstroIcon, CssIcon, TypescriptIcon],
-    img: "tricksweb.png",
-    URLwebsite: "https://tricksweb.netlify.app/",
-    URLrepository: "https://github.com/Danielmeedina/Tricks-Web",
-  },
 ];
 ---
 
@@ -108,9 +84,12 @@ const projects: Projects[] = [
                 <a
                   href={project.URLwebsite}
                   target="_blank"
-                  class="flex flex-row gap-2 items-center border rounded p-2 hover:bg-blue-500 text-white"
+                  class="flex flex-row gap-2 items-center border rounded p-2 hover:bg-blue-500 hover:border-transparent text-white"
                 >
-                  <GowebIcon /> Preview
+                  <GowebIcon />{" "}
+                  {currentLocale === "es"
+                    ? `ir a  ${project.title}`
+                    : `go to ${project.title}`}
                 </a>
                 <a
                   href={project.URLrepository}
@@ -118,7 +97,7 @@ const projects: Projects[] = [
                   class="text-white flex flex-row gap-2 items-center p-2 border rounded border-transparent hover:text-blue-500 hover:border-blue-500"
                 >
                   <GithubIcon width="25" height="25" color="white" />
-                  Code
+                  {currentLocale === "es" ? `Codigo` : `Code`}
                 </a>
               </footer>
             </div>
