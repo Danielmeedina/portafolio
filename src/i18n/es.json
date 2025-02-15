@@ -1,7 +1,7 @@
 {
   "NAVBAR": {
-    "TITLE_1": "servicios",
-    "TITLE_LABEL_1": "ir a servicios",
+    "TITLE_1": "Habilidades",
+    "TITLE_LABEL_1": "ir a Habilidades",
     "TITLE_2": "proyectos",
     "TITLE_LABEL_2": "ir a proyectos",
     "TITLE_3": "contacto",
@@ -19,7 +19,7 @@
     "CONTACT_ME": "Contactame"
   },
   "SERVICES": {
-    "TITLE": "servicios",
+    "TITLE": "Habilidades",
     "SERVICES_1": {
       "TITLE": "programacion web",
       "DESCRIPTION": "Desarrollo de sitios y aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript y frameworks modernos.",

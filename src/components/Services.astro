@@ -12,13 +12,13 @@ import AstroIcon from "@icons/AstroIcon.astro";
 import NextjsIcon from "@icons/NextjsIcon.astro";
 import CssIcon from "@icons/CssIcon.astro";
 import TailwindIcon from "@icons/TailwindIcon.astro";
-import Figma from "@icons/Figma.astro";
-import GitIcon from "@icons/GitIcon.astro";
-import GithubIcon from "@icons/GithubIcon.astro";
-import NetlifyIcon from "@icons/NetlifyIcon.astro";
-import VercelIcon from "@icons/VercelIcon.astro";
-import AWSIcon from "@icons/AWSIcon.astro";
 import NodejsIcon from "@icons/NodejsIcon.astro";
+import Figma from "@icons/Figma.astro";
+// import GitIcon from "@icons/GitIcon.astro";
+// import GithubIcon from "@icons/GithubIcon.astro";
+// import NetlifyIcon from "@icons/NetlifyIcon.astro";
+// import VercelIcon from "@icons/VercelIcon.astro";
+// import AWSIcon from "@icons/AWSIcon.astro";
 
 const { currentLocale = "es" } = Astro;
 const i18n = getI18N({ currentLocale });
@@ -51,12 +51,13 @@ const services: Services[] = [
     list: i18n.SERVICES.SERVICES_2.LIST,
     techUsed: [CssIcon, TailwindIcon, HtmlIcon, Figma, AstroIcon],
   },
-  {
-    title: i18n.SERVICES.SERVICES_3.TITLE,
-    description: i18n.SERVICES.SERVICES_3.DESCRIPTION,
-    list: i18n.SERVICES.SERVICES_3.LIST,
-    techUsed: [GitIcon, GithubIcon, NetlifyIcon, VercelIcon, AWSIcon],
-  },
+  // TODO: Uncomment this section to show the services section
+  // {
+  //   title: i18n.SERVICES.SERVICES_3.TITLE,
+  //   description: i18n.SERVICES.SERVICES_3.DESCRIPTION,
+  //   list: i18n.SERVICES.SERVICES_3.LIST,
+  //   techUsed: [GitIcon, GithubIcon, NetlifyIcon, VercelIcon, AWSIcon],
+  // },
   {
     title: i18n.SERVICES.SERVICES_4.TITLE,
     subtitle: i18n.SERVICES.SERVICES_4.SUBTITLE,
@@ -72,7 +73,7 @@ const services: Services[] = [
 ];
 ---
 
-<MySection id="services" data-section="services">
+<MySection id="skills" data-section="skills">
   <TitleSection>
     <svg
       class="size-8"

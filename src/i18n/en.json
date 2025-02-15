@@ -1,7 +1,7 @@
 {
   "NAVBAR": {
-    "TITLE_1": "services",
-    "TITLE_LABEL_1": "go to services section",
+    "TITLE_1": "skills",
+    "TITLE_LABEL_1": "go to skills section",
     "TITLE_2": "projects",
     "TITLE_LABEL_2": "go to projects section",
     "TITLE_3": "contact",
@@ -19,7 +19,7 @@
     "CONTACT_ME": "Contact me"
   },
   "SERVICES": {
-    "TITLE": "services",
+    "TITLE": "skills",
     "SERVICES_1": {
       "TITLE": "web programming",
       "DESCRIPTION": "Development of websites and web applications using technologies such as HTML, CSS, JavaScript and modern frameworks.",
